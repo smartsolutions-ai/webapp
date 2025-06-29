@@ -1,0 +1,41 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: build
+    entrypoint: 'bash'
+    args:
+      - -c
+      - |
+        docker build -t gcr.io/totemic-access-464412-c6/sd-webapp:$COMMIT_SHA --build-arg NEO4J_URI=$$NEO4J_URI --build-arg NEO4J_USERNAME=$$NEO4J_USERNAME --build-arg NEO4J_PASSWORD=$$NEO4J_PASSWORD .
+    secretEnv:
+      [
+        'NEO4J_URI',
+        'NEO4J_USERNAME',
+        'NEO4J_PASSWORD',
+      ]
+    env:
+
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/totemic-access-464412-c6/sd-webapp:$COMMIT_SHA']
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'sd-webapp'
+      - '--image'
+      - 'gcr.io/totemic-access-464412-c6/sd-webapp:$COMMIT_SHA'
+      - '--region'
+      - 'asia-southeast1'
+images:
+  - 'gcr.io/totemic-access-464412-c6/sd-webapp:$COMMIT_SHA'
+availableSecrets:
+  secretManager:
+    - versionName: projects/totemic-access-464412-c6/secrets/NEO4J_URI/versions/3
+      env: 'NEO4J_URI'
+    - versionName: projects/totemic-access-464412-c6/secrets/NEO4J_USERNAME/versions/1
+      env: 'NEO4J_USERNAME'
+    - versionName: projects/totemic-access-464412-c6/secrets/NEO4J_PASSWORD/versions/3
+      env: 'NEO4J_PASSWORD'
