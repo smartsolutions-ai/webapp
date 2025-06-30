@@ -1,6 +1,4 @@
-ARG NEO4J_URI
-ARG NEO4J_USERNAME
-ARG NEO4J_PASSWORD
+
 
 FROM node:23-slim AS base
 ENV NODE_OPTIONS="--max-old-space-size=4096"
@@ -17,9 +15,6 @@ RUN rm -f /app/.env.production
 RUN rm -f /app/.env.development
 
 FROM base AS build
-ARG NEO4J_URI
-ARG NEO4J_USERNAME
-ARG NEO4J_PASSWORD
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm build
 RUN rm -f /app/.env.production
