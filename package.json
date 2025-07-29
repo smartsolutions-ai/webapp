@@ -1,5 +1,5 @@
 {
-  "name": "webapp",
+  "name": "ai-landing-page",
   "version": "1.0.0",
   "description": "A landing page showcasing AI solutions for job interview preparation, college ranking, and stock decision-making assistance.",
   "main": "index.js",
