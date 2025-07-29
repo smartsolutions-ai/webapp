@@ -1,0 +1,143 @@
+.contactSection {
+  background-color: #ECEFCA;
+  padding: 5rem 0;
+  width: 100%;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.contactSection h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #213448;
+  font-weight: 700;
+}
+
+.contactSection > p {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #2d3748;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.contactInfo {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contactInfo h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #213448;
+}
+
+.contactInfo p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2d3748;
+}
+
+.contactForm {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #213448;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #547792;
+  box-shadow: 0 0 0 2px rgba(84, 119, 146, 0.2);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  background-color: #213448;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #1a2a3a;
+  transform: translateY(-2px);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactSection {
+    padding: 3rem 0;
+  }
+  
+  .contactSection h2 {
+    font-size: 2rem;
+  }
+  
+  .contactSection > p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  
+  .contactInfo,
+  .contactForm {
+    padding: 1.5rem;
+  }
+}

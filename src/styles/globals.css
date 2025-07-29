@@ -1,0 +1,89 @@
+/* Global styles */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: #213448; /* Body background color */
+  color: #333;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Reset base heading styles */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #ffffff; /* Header text color */
+}
+
+/* Specific heading styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  background-color: #547792; /* Container background color */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.feature {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.video-slider {
+    margin: 20px 0;
+}
+
+/* Contact section */
+.contact-section {
+  background-color: #ECEFCA; /* Contact section background */
+  padding: 4rem 0;
+  width: 100%;
+}
+
+/* Footer */
+.footer {
+  background-color: #ECEFCA; /* Footer background */
+  padding: 2rem 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+}
